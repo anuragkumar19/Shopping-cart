@@ -46,7 +46,7 @@ collectionsElm.addEventListener('click', e => {
 });
 
 function renderMain() {
-    UsernameChInp.value = localStorage.name;
+    UsernameChInp.value = localStorage.name ? localStorage.name : '';
     if (localStorage.profileImg) {
         proImg.src = localStorage.profileImg;
     }
