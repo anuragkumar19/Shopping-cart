@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping-cart list items</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous">
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ************color:******amber darken-2******;*********************-->
+    <div class="CPre amber lighten-4">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                    <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <div class="navbar-fixed">
+        <nav class="amber darken-2">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo"><i class="material-icons">shopping_cart</i>CartX</a>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="https://source.unsplash.com/600x400/?nature,night,day,sun">
+                </div>
+                <a href="#user"><img id="profileImg" class="circle" src="img/avatar.png"></a>
+                <a id="Username" href="#name"><span class="white-text grey darken-2">Guest</span></a>
+            </div>
+        </li>
+
+        <li><a href="#formModal" class="blue-text waves-effect modal-trigger"><i class="material-icons blue-text">add</i>Create New Collection</a></li>
+        <li><a href="index.html" class="waves-effect">Home</a></li>
+        <li><a class="subheader">All Collections</a></li>
+        <div id="allColl">
+            <li><a href="#!" class="waves-effect"><i class="material-icons blue-text">folder</i>Nothing to show</a></li>
+        </div>
+    </ul>
+    <!-- /Navbar -->
+
+    <!-- Main -->
+    <div class="container">
+        <h3>Edit Item (<span id="nameof"></span>)</h3>
+        <div class="row">
+            <form id="editForm" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix blue-text">bookmark</i>
+                        <input id="editName" type="text" class="validate">
+                        <label for="editName">Item Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix blue-text">link</i>
+                        <input id="editUrl" type="url" class="validate">
+                        <label for="editUrl">Url to item</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix blue-text">attach_money</i>
+                        <input id="editPrice" type="number" class="validate">
+                        <label for="editPrice">Price per item</label>
+                    </div>
+                    <div class="col s1"></div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix blue-text">arrow_upward</i>
+                        <input id="editNum" type="number" class="validate">
+                        <label for="editNum">Number of item</label>
+                    </div>
+
+                </div>
+                <button class="btn waves-effect waves-light blue darken-1" type="submit">
+                    <i class="material-icons left">add</i>Save
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- /Main -->
+
+
+
+
+
+    <!-- Form Modal -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <h4>Create collection</h4>
+            <div class="row">
+                <form id="newCollForm" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix blue-text">folder</i>
+                            <input type="text" class="validate" id="nameInp">
+                            <label for="nameInp">Collection Name</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix blue-text">brush</i>
+                            <select id="selectInp">
+                                <option value="blue" selected>Blue</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                            </select>
+                            <label>Choose colour</label>
+                        </div>
+                    </div>
+                    <button class="btn waves-effect waves-light blue darken-1" type="submit">
+                        <i class="material-icons left">add</i>Create
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /Form Modal -->
+
+    <!-- Javascripts -->
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <!-- Qs.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+    <!-- Materialize Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous"></script>
+    <!-- main.js -->
+    <script src="js/main.js"></script>
+    <!-- index.js -->
+    <script src="js/edit.js"></script>
+</body>
+</html>
